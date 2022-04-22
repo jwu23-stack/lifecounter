@@ -1,24 +1,223 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="lifecounter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Magic Life Counter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="pCm-lo-W3C">
+                                <rect key="frame" x="50" y="124" width="314" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Hy5-0r-oen">
+                                <rect key="frame" x="116.5" y="186.5" width="181" height="296.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vfs-bf-PjA">
+                                        <rect key="frame" x="0.0" y="0.0" width="181" height="123.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 1 Lives:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tQ0-NY-eWc">
+                                                <rect key="frame" x="0.0" y="0.0" width="181" height="34.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9js-Ld-H5Z">
+                                                <rect key="frame" x="0.0" y="44.5" width="181" height="34.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="E7f-6P-0fl">
+                                                <rect key="frame" x="0.0" y="89" width="181" height="34.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCQ-4R-uR8">
+                                                        <rect key="frame" x="0.0" y="0.0" width="41.5" height="34.5"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="gray" title="+1">
+                                                            <color key="baseForegroundColor" red="0.95077828360000005" green="1" blue="0.089820944860000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color key="baseBackgroundColor" systemColor="systemPurpleColor"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="updateScore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AiW-HC-ZtH"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOF-Wz-CnK">
+                                                        <rect key="frame" x="46.5" y="0.0" width="41.5" height="34.5"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="gray" title="+5">
+                                                            <color key="baseForegroundColor" red="0.95077828360430749" green="1" blue="0.089820944864056007" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color key="baseBackgroundColor" systemColor="systemPurpleColor"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="updateScore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gf8-I2-OMC"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DYh-iq-dTf">
+                                                        <rect key="frame" x="93" y="0.0" width="41.5" height="34.5"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="gray" title="-1">
+                                                            <color key="baseForegroundColor" red="0.95077828360000005" green="1" blue="0.089820944860000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color key="baseBackgroundColor" systemColor="systemPurpleColor"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="updateScore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vup-W0-NBH"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVQ-gp-5Pa">
+                                                        <rect key="frame" x="139.5" y="0.0" width="41.5" height="34.5"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="gray" title="-5">
+                                                            <color key="baseForegroundColor" red="0.95077828360000005" green="1" blue="0.089820944860000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color key="baseBackgroundColor" systemColor="systemPurpleColor"/>
+                                                        </buttonConfiguration>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="updateScore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pvx-Ji-Z1R"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="M2m-cg-VWr">
+                                        <rect key="frame" x="0.0" y="173.5" width="181" height="123"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 2 Lives:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="o19-Ak-pbI">
+                                                <rect key="frame" x="0.0" y="0.0" width="181" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="x6S-ND-47l">
+                                                <rect key="frame" x="0.0" y="44" width="181" height="34.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7Jd-cE-Tes">
+                                                <rect key="frame" x="0.0" y="88.5" width="181" height="34.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dba-SF-Lpr">
+                                                        <rect key="frame" x="0.0" y="0.0" width="41.5" height="34.5"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="gray" title="+1">
+                                                            <color key="baseForegroundColor" red="0.95077828360000005" green="1" blue="0.089820944860000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color key="baseBackgroundColor" systemColor="systemPurpleColor"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="updateScore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OXp-LA-A2r"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7k9-yx-l8Q">
+                                                        <rect key="frame" x="46.5" y="0.0" width="41.5" height="34.5"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="gray" title="+5">
+                                                            <color key="baseForegroundColor" red="0.95077828360000005" green="1" blue="0.089820944860000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color key="baseBackgroundColor" systemColor="systemPurpleColor"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="updateScore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0bE-8V-4KE"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMw-gG-pKE">
+                                                        <rect key="frame" x="93" y="0.0" width="41.5" height="34.5"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="gray" title="-1">
+                                                            <color key="baseForegroundColor" red="0.95077828360000005" green="1" blue="0.089820944860000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color key="baseBackgroundColor" systemColor="systemPurpleColor"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="updateScore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wRx-MD-GC1"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8q0-9H-A15">
+                                                        <rect key="frame" x="139.5" y="0.0" width="41.5" height="34.5"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="gray" title="-5">
+                                                            <color key="baseForegroundColor" red="0.95077828360000005" green="1" blue="0.089820944860000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color key="baseBackgroundColor" systemColor="systemPurpleColor"/>
+                                                        </buttonConfiguration>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="updateScore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ulP-tF-FAL"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <variation key="heightClass=compact" axis="horizontal"/>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7k-c9-ehf">
+                                <rect key="frame" x="207" y="503" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="x7k-c9-ehf" firstAttribute="top" secondItem="Hy5-0r-oen" secondAttribute="bottom" constant="20" id="2sk-F0-HTN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pCm-lo-W3C" secondAttribute="trailing" constant="50" id="D1R-eD-iB3"/>
+                            <constraint firstItem="Hy5-0r-oen" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Kcw-FU-KUb"/>
+                            <constraint firstItem="Hy5-0r-oen" firstAttribute="top" secondItem="pCm-lo-W3C" secondAttribute="bottom" constant="36" id="L9P-o2-6od"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="x7k-c9-ehf" secondAttribute="bottom" constant="359" id="Nxe-K5-dIg"/>
+                            <constraint firstItem="pCm-lo-W3C" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="Pnp-Ir-MrS"/>
+                            <constraint firstItem="pCm-lo-W3C" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="ZBq-lt-uVK"/>
+                            <constraint firstItem="pCm-lo-W3C" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="o0q-vA-yxI"/>
+                            <constraint firstItem="x7k-c9-ehf" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="tOi-Db-Ynp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pCm-lo-W3C" secondAttribute="trailing" constant="50" id="ul9-bo-chv"/>
+                            <constraint firstItem="pCm-lo-W3C" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="xU1-4C-vmT"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="losingPlayer" destination="x7k-c9-ehf" id="Bod-zu-Uyf"/>
+                        <outlet property="player1LivesLabel" destination="9js-Ld-H5Z" id="lk0-A8-ytx"/>
+                        <outlet property="player1Minus1" destination="DYh-iq-dTf" id="c7l-JR-vao"/>
+                        <outlet property="player1Minus5" destination="ZVQ-gp-5Pa" id="QCz-SU-0Xa"/>
+                        <outlet property="player1Plus1" destination="HCQ-4R-uR8" id="o3y-2t-9YO"/>
+                        <outlet property="player1Plus5" destination="yOF-Wz-CnK" id="ily-93-wEr"/>
+                        <outlet property="player2LivesLabel" destination="x6S-ND-47l" id="8Lf-Uk-5zg"/>
+                        <outlet property="player2Minus1" destination="aMw-gG-pKE" id="Uyr-BJ-ZvY"/>
+                        <outlet property="player2Minus5" destination="8q0-9H-A15" id="hiS-2k-LfS"/>
+                        <outlet property="player2Plus1" destination="Dba-SF-Lpr" id="yS1-qC-lQa"/>
+                        <outlet property="player2Plus5" destination="7k9-yx-l8Q" id="AVH-Qm-0sw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="28.985507246376812" y="69.642857142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
