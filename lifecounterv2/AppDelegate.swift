@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  lifecounter
+//  lifecounterv2
 //
-//  Created by Jerry CH Wu on 4/21/22.
+//  Created by Jerry CH Wu on 4/26/22.
 //
 
 import UIKit
